@@ -88,7 +88,11 @@ function sumOfBetween(a, b) {
 }
 
 // 8) HTML-də uzunluğu və hündürlüyü 200px olan element hazırlayın və bir ədəd button hazırlayın - istifadəçi hər dəfə buttona click edəndə uzunluq 50px, hündürlük isə 20px artmalıdır
-let buttonbackground=document.getElementById("btn");
-let input=document.getElementById("input");
-input.onclick=buttonbackground.style.backgroundSize+10;
-
+let btn = document.getElementById("input");
+let background = document.getElementById("btn");
+btn.addEventListener("click", function () {
+  let height=background.offsetWidth+20;
+  let width=background.offsetWidth+50;
+  background.style.width=JSON.stringify(width)+"px";
+  background.style.height=JSON.stringify(height)+"px";
+});
